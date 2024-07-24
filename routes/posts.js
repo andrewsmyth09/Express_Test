@@ -41,4 +41,10 @@ router.get('/:id', (req, res) => {
     }
 });
 
+// Create new post
+router.post('/', (req, res) => {
+    console.log(req.body);
+    res.status(201).json(posts);
+});
+
 export default router;

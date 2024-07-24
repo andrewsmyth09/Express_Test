@@ -18,6 +18,10 @@ const app = express();
 //     res.sendFile(path.join(__dirname, 'public', 'about.html'))
 // })
 
+// Body Parser middleware
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+
 // Routes
 app.use('/api/posts', post);
 
