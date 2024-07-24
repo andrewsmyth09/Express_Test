@@ -1,9 +1,11 @@
-const exp = require('constants');
-const express = require('express');
-const path = require('path');
+// const exp = require('constants');
+import express from 'express'
+import path from 'path'
+import post from './routes/posts.js'
+
 const port = process.env.PORT || 8000;
 const app = express();
-const posts = require('./routes/posts')
+//const posts = require('./routes/posts')
 
 // Setup static folder
 // app.use(express.static(path.join(__dirname, 'public')))
@@ -17,7 +19,7 @@ const posts = require('./routes/posts')
 // })
 
 // Routes
-app.use('/api/posts', posts);
+app.use('/api/posts', post);
 
 app.listen(port, () => {
     console.log('Server is running on port', port);

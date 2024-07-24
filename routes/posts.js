@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 
 let posts = [
@@ -41,4 +41,4 @@ router.get('/:id', (req, res) => {
     }
 });
 
-module.exports = router;
+export default router;
