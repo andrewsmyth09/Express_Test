@@ -1,6 +1,7 @@
 // const exp = require('constants');
 import express from 'express'
 import path from 'path'
+import {fileURLToPath} from 'url'
 import post from './routes/posts.js'
 import logger from './middleware/logger.js';
 import errorHandler from './middleware/error.js';
@@ -10,8 +11,12 @@ const port = process.env.PORT || 8000;
 const app = express();
 //const posts = require('./routes/posts')
 
+// Get the directory name
+const _filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(_filename);
+
 // Setup static folder
-// app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public')))
 
 // app.get('/', (req, res) => {
 //     res.sendFile(path.join(__dirname, 'public', 'index.html'));
